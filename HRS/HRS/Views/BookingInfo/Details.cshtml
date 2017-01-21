@@ -4,96 +4,80 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
-<div class="breadcrumb" style="background-color:lightblue">
-    <h2 class="breadcrumb" style="text-align:center">
-        Booking information Details
-    </h2>
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookingInfo</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
 </div>
-
-<div class="container">
-    <div class="breadcrumb" style="background-color:lightblue">
-        <h4 class="breadcrumb" style="background-color:lightblue">
-            Booking Information
-        </h4>
-        <div class="container">
-            <hr />
-            <div class="breadcrumb">
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.User.UserName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.User.UserName)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.FullName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.FullName)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Address)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Address)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Email)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Phone)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Phone)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.CheckInTime)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.CheckInTime)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.CheckOutTime)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.CheckOutTime)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Comments)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Comments)
-                    </dd>
-
-                </dl>
-            </div>
-        </div>
-        <p>
-            <div class="" style="text-align:center">
-                <div class="btn btn-default">
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
-                </div>
-            </div>
-
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
-        </p>
-    </div>
-</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

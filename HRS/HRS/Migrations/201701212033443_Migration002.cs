@@ -3,7 +3,7 @@ namespace HRS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Migration005 : DbMigration
+    public partial class Migration002 : DbMigration
     {
         public override void Up()
         {

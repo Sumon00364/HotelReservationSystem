@@ -53,7 +53,7 @@ namespace HRS.Models
         [Display(Name="Check Out Time")]
         public DateTime CheckOutTime { get; set; }
 
-        [StringLength(500, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=100)]
+        [StringLength(500, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=30)]
         public string Comments { get; set; }
 
 

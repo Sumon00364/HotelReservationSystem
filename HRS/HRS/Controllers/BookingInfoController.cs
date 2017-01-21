@@ -18,8 +18,8 @@ namespace HRS.Controllers
         // GET: /BookingInfo/
         public ActionResult Index()
         {
-            var bookinginfoes = db.BookingInfoes.Include(b => b.User);
-            return View(bookinginfoes.ToList());
+            var bookinginfo = db.BookingInfo.Include(b => b.User);
+            return View(bookinginfo.ToList());
         }
 
         // GET: /BookingInfo/Details/5
@@ -29,7 +29,7 @@ namespace HRS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingInfo bookinginfo = db.BookingInfoes.Find(id);
+            BookingInfo bookinginfo = db.BookingInfo.Find(id);
             if (bookinginfo == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace HRS.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.BookingInfoes.Add(bookinginfo);
+                db.BookingInfo.Add(bookinginfo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace HRS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingInfo bookinginfo = db.BookingInfoes.Find(id);
+            BookingInfo bookinginfo = db.BookingInfo.Find(id);
             if (bookinginfo == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace HRS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BookingInfo bookinginfo = db.BookingInfoes.Find(id);
+            BookingInfo bookinginfo = db.BookingInfo.Find(id);
             if (bookinginfo == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace HRS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BookingInfo bookinginfo = db.BookingInfoes.Find(id);
-            db.BookingInfoes.Remove(bookinginfo);
+            BookingInfo bookinginfo = db.BookingInfo.Find(id);
+            db.BookingInfo.Remove(bookinginfo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
