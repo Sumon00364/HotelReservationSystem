@@ -1,0 +1,43 @@
+﻿@model HRS.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout - CP.cshtml";
+}
+
+<style>
+    h2 {
+        background-color: lightblue;
+        text-align: center;
+    }
+</style>
+
+<h2 class="breadcrumb" style="background-color:lightblue"> Role Details</h2>
+
+<div class="breadcrumb" style="background-color:lightblue">
+    <div class="container" style="background-color:lightblue">
+        <h4>Role</h4>
+        <hr />
+        <div class="breadcrumb">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <br />
+    <div class="" style="text-align:center">
+        <div class="btn btn-default">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+    </p>
+</div>

@@ -1,0 +1,122 @@
+﻿@model HRS.Models.BookingInfo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout - CP.cshtml";
+}
+
+<h2 class="breadcrumb" style="background-color:lightblue">
+    Delete
+</h2>
+
+
+<div class="breadcrumb" style="background-color:lightblue">
+    <div class="container">
+        <div class="container">
+            <div class="container">
+                <div class="container">
+                    <div class="container" style="color:red">
+                        <h3 class="breadcrumb" style="text-align:center">
+                            Are you sure you want to delete this?
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="background-color:lightblue">
+        <div class="breadcrumb" style="background-color:aliceblue">
+
+            <div class="breadcrumb" style="background-color:lightblue">
+                <h4 class="breadcrumb" style="">
+                    Booking Information
+                </h4>
+            </div>
+
+            <div class="breadcrumb" style="background-color:lightblue">
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.User.UserName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.User.UserName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FullName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CheckInTime)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CheckInTime)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CheckOutTime)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CheckOutTime)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Comments)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Comments)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="text-align:center">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+        </div>
+    </div>
+</div>

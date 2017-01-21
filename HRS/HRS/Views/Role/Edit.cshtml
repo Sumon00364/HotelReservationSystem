@@ -1,0 +1,47 @@
+﻿@model HRS.Models.Role
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout - CP.cshtml";
+}
+
+<style>
+    h2 {
+        background-color: lightblue;
+        color: black;
+        text-align: center;
+    }
+</style>
+
+<h2 class="breadcrumb" style="background-color:lightblue">Edit Role</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Role</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+        <div class="container" style="background-color:aliceblue">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = " " })
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = " ", type = "text" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <br/><br/>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="container">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</div>

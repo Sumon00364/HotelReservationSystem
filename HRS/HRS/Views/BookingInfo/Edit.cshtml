@@ -1,0 +1,84 @@
+﻿@model HRS.Models.BookingInfo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout - CP.cshtml";
+}
+
+<h2 class="breadcrumb" style="background-color:lightblue">
+    Edit Booking Information........
+</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="background-color:aliceblue">
+        <h4>BookingInfo Edit here...</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+        <div class="container">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, "User Name", new { @class = " " })
+                @Html.DropDownList("UserID", String.Empty)
+                @Html.ValidationMessageFor(model => model.UserID)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FullName, new { @class = " " })
+                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", placeholder = "   ", type = "text" })
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = " " })
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "  ", type = "text" })
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = " " })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "   ", type = "text" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, new { @class = " " })
+                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "   ", type = "text" })
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CheckInTime, new { @class = " " })
+                @Html.TextBoxFor(model => model.CheckInTime, new { @class = "form-control", placeholder = "   ", type = "date" })
+                @Html.ValidationMessageFor(model => model.CheckInTime)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CheckOutTime, new { @class = " " })
+                @Html.TextBoxFor(model => model.CheckOutTime, new { @class = "form-control", placeholder = "", type = "date" })
+                @Html.ValidationMessageFor(model => model.CheckOutTime)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comments, new { @class = " " })
+                @Html.TextAreaFor(model => model.Comments, new { @class = "form-control", placeholder = "   ", type = "text" })
+                @Html.ValidationMessageFor(model => model.Comments)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="container">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</div>

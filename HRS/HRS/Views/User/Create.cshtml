@@ -1,0 +1,61 @@
+﻿@model HRS.Models.User
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout - CP.cshtml";
+}
+
+<style>
+    h2{
+        text-align:center;
+    }
+</style>
+
+<h2 class="breadcrumb" style="background-color:lightblue">
+    Create User Profile
+</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal" >
+        <h4> User start here </h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="container" style="background-color:aliceblue">
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, new { @class = " " })
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Enter your name....", type = "text" })
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = " " })
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter your E-Mail address...", type = "text" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = " " })
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Enter password......", type = "text" })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, new { @class = " " })
+            @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", placeholder = "Enter confirm password....", typee = "text" })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+</div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info", })
+</div>
