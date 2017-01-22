@@ -19,7 +19,9 @@ namespace HRS.Models
 
         [Required]
         [Display(Name="Logo")]
-        public int LogoID { get; set; }
+        public int ImageID { get; set; }
+        [ForeignKey("ImageID")]
+        public virtual Images Images { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=3)]
@@ -27,8 +29,6 @@ namespace HRS.Models
         public string Title { get; set; }
 
         [StringLength(250, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=20)]
-        public string Description { get; set; }
-
-        public virtual Images Images { get; set; }
+        public string Description { get; set; }   
     }
 }

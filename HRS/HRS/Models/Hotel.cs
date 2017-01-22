@@ -60,9 +60,8 @@ namespace HRS.Models
         public string Description { get; set; }
 
         [Required]
-        [Display(Name="Logo")]
-        public int LogoID { get; set; }
-        [ForeignKey("LogoID")]
-        public virtual  Images  Images{ get; set; }
+        [Display(Name=" Hotel Logo")]
+        public int HotelImage { get; set; }
+        public virtual  ICollection<Partners>  Partners{ get; set; }
     }
 }

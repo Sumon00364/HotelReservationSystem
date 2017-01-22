@@ -12,7 +12,7 @@ namespace HRS.Models
         public Gallary()
         {
             this.Images = new HashSet<Images>();
-            this.RoomType = new HashSet<RoomType>();          
+            this.RoomType = new HashSet<RoomType>();
         }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }

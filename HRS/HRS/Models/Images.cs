@@ -12,9 +12,7 @@ namespace HRS.Models
         public Images()
         {
             this.Gallary = new HashSet<Gallary>();
-            this.Partners = new HashSet<Partners>();
             this.Services = new HashSet<Services>();
-            this.Hotel = new HashSet<Hotel>();
         }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -34,10 +32,7 @@ namespace HRS.Models
         [StringLength(250, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=30)]
         public string Description { get; set; }
 
-        public virtual ICollection<Services> Services { get; set; }
         public virtual ICollection<Gallary> Gallary { get; set; }
-        public virtual ICollection<Hotel> Hotel { get; set; }
-        public virtual ICollection<Partners> Partners { get; set; }
-        
+        public virtual ICollection<Services> Services { get; set; }
     }
 }

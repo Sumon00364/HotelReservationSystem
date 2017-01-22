@@ -164,29 +164,13 @@
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\GallaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
-    <Compile Include="Controllers\PartnersController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\RoomTypeController.cs" />
-    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701212018567_Migration003.cs" />
-    <Compile Include="Migrations\201701212018567_Migration003.Designer.cs">
-      <DependentUpon>201701212018567_Migration003.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701212029350_Migration001.cs" />
-    <Compile Include="Migrations\201701212029350_Migration001.Designer.cs">
-      <DependentUpon>201701212029350_Migration001.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701212033443_Migration002.cs" />
-    <Compile Include="Migrations\201701212033443_Migration002.Designer.cs">
-      <DependentUpon>201701212033443_Migration002.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookingInfo.cs" />
     <Compile Include="Models\Facilities.cs" />
@@ -312,11 +296,6 @@
     <Content Include="Views\Facilities\Details.cshtml" />
     <Content Include="Views\Facilities\Edit.cshtml" />
     <Content Include="Views\Facilities\Index.cshtml" />
-    <Content Include="Views\Hotel\Create.cshtml" />
-    <Content Include="Views\Hotel\Delete.cshtml" />
-    <Content Include="Views\Hotel\Details.cshtml" />
-    <Content Include="Views\Hotel\Edit.cshtml" />
-    <Content Include="Views\Hotel\Index.cshtml" />
     <Content Include="Views\Gallary\Create.cshtml" />
     <Content Include="Views\Gallary\Delete.cshtml" />
     <Content Include="Views\Gallary\Details.cshtml" />
@@ -332,16 +311,6 @@
     <Content Include="Views\RoomType\Details.cshtml" />
     <Content Include="Views\RoomType\Edit.cshtml" />
     <Content Include="Views\RoomType\Index.cshtml" />
-    <Content Include="Views\Partners\Create.cshtml" />
-    <Content Include="Views\Partners\Delete.cshtml" />
-    <Content Include="Views\Partners\Details.cshtml" />
-    <Content Include="Views\Partners\Edit.cshtml" />
-    <Content Include="Views\Partners\Index.cshtml" />
-    <Content Include="Views\Services\Create.cshtml" />
-    <Content Include="Views\Services\Delete.cshtml" />
-    <Content Include="Views\Services\Details.cshtml" />
-    <Content Include="Views\Services\Edit.cshtml" />
-    <Content Include="Views\Services\Index.cshtml" />
     <None Include="Views\Shared\_Layout - CP.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
@@ -358,17 +327,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701212018567_Migration003.resx">
-      <DependentUpon>201701212018567_Migration003.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701212029350_Migration001.resx">
-      <DependentUpon>201701212029350_Migration001.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701212033443_Migration002.resx">
-      <DependentUpon>201701212033443_Migration002.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
