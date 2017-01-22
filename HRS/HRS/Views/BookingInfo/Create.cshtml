@@ -5,89 +5,89 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Create</h2>
+<style>
+    h2 {
+        text-align: center;
+        background-color: lightblue;
+    }
+</style>
 
-@using (Html.BeginForm()) 
+<h2 class="breadcrumb" style="background-color:lightblue">
+    Create Booking Information
+</h2>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>BookingInfo</h4>
+
+        <h4 class="breadcrumb" style="background-color:lightblue">
+            Booking Information here
+        </h4>
+
         <hr />
         @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserID, "UserID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="container" style="background-color:aliceblue">
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, "User", new { @class = " " })
                 @Html.DropDownList("UserID", String.Empty)
                 @Html.ValidationMessageFor(model => model.UserID)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FullName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FullName)
+            <div class="form-group">
+                @Html.LabelFor(model => model.FullName, new { @class = " " })
+                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", placeholder = "Please enter your full name..", type = "text" })
                 @Html.ValidationMessageFor(model => model.FullName)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Address)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = " " })
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Enter your address...", type = "text" })
                 @Html.ValidationMessageFor(model => model.Address)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = " " })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter your E-Mail address...", type = "text" })
                 @Html.ValidationMessageFor(model => model.Email)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Phone, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Phone)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, new { @class = " " })
+                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Enter your phone number...", type = "text" })
                 @Html.ValidationMessageFor(model => model.Phone)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CheckInTime, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CheckInTime)
+            <div class="form-group">
+                @Html.LabelFor(model => model.CheckInTime, new { @class = " " })
+                @Html.TextBoxFor(model => model.CheckInTime, new { @class = "form-control", placeholder = " ", type = "date" })
                 @Html.ValidationMessageFor(model => model.CheckInTime)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CheckOutTime, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CheckOutTime)
+            <div class="form-group">
+                @Html.LabelFor(model => model.CheckOutTime, new { @class = " " })
+                @Html.TextBoxFor(model => model.CheckOutTime, new { @class = "form-control", Placeholder = " ", type = "date" })
                 @Html.ValidationMessageFor(model => model.CheckOutTime)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Comments, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Comments)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comments, new { @class = " " })
+                @Html.TextAreaFor(model => model.Comments, new { @class = "form-control", placeholder = "Please comments here..", type = "text" })
                 @Html.ValidationMessageFor(model => model.Comments)
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div style="background-color:aliceblue">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
 </div>

@@ -28,7 +28,7 @@ namespace HRS.Models
 
         [Required]
         [StringLength(200, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=5)]
-        [Display(Name="Hotel Name")]
+        [Display(Name="Hotel Address")]
         public string Address { get; set; }
 
         [Required]
