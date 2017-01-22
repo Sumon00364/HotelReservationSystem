@@ -18,6 +18,10 @@ namespace HRS.Models
         public int ID { get; set; }
 
         [Required]
+        [Display(Name = " Hotel Logo")]
+        public int HotelImage { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=4)]
         [Display(Name="Hotel Name")]
         public string Name { get; set; }
@@ -59,9 +63,6 @@ namespace HRS.Models
         [Display(Name="Hotel Description")]
         public string Description { get; set; }
 
-        [Required]
-        [Display(Name=" Hotel Logo")]
-        public int HotelImage { get; set; }
         public virtual  ICollection<Partners>  Partners{ get; set; }
     }
 }
