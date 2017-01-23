@@ -5,82 +5,85 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 class="breadcrumb" style="background-color:lightblue; text-align:center">Edit Hotel Information</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Hotel</h4>
+        <h4 class="breadcrumb" style="background-color:lightblue">Hotel</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.HotelImage, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HotelImage)
+        <div class="container" style="background-color:aliceblue">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelImage, new { @class = " " })
+                @Html.TextBoxFor(model => model.HotelImage, new { @class = "form-control", placeholder = "Enter hotel image...", type = "text" })
                 @Html.ValidationMessageFor(model => model.HotelImage)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = " " })
-            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter hotel name..", type = "text" })
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Address, new { @class = " " })
-            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Enter hotel address...", type = "text" })
-            @Html.ValidationMessageFor(model => model.Address)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, new { @class = " " })
-            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter hotel E-MAil address...", type = "text" })
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Phone, new { @class = " " })
-            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Enter hotel phone number..", type = "text" })
-            @Html.ValidationMessageFor(model => model.Phone)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Mobile, new { @class = " " })
-            @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control", placeholder = "Enter hotel mobile number..", type = "text" })
-            @Html.ValidationMessageFor(model => model.Mobile)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Fax, new { @class = " " })
-            @Html.TextBoxFor(model => model.Fax, new { @class = "form-control", placeholder = "Enter hotel fax number...", type = "text" })
-            @Html.ValidationMessageFor(model => model.Fax)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Website, new { @class = " " })
-            @Html.TextBoxFor(model => model.Website, new { @class = "form-control", placeholder = "Enter hotel website..", type = "text" })
-            @Html.ValidationMessageFor(model => model.Website)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = " " })
-            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Comments here please...", type = "text" })
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = " " })
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter hotel name..", type = "text" })
+                @Html.ValidationMessageFor(model => model.Name)
             </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = " " })
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Enter hotel address...", type = "text" })
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = " " })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter hotel E-MAil address...", type = "text" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, new { @class = " " })
+                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Enter hotel phone number..", type = "text" })
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Mobile, new { @class = " " })
+                @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control", placeholder = "Enter hotel mobile number..", type = "text" })
+                @Html.ValidationMessageFor(model => model.Mobile)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Fax, new { @class = " " })
+                @Html.TextBoxFor(model => model.Fax, new { @class = "form-control", placeholder = "Enter hotel fax number...", type = "text" })
+                @Html.ValidationMessageFor(model => model.Fax)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Website, new { @class = " " })
+                @Html.TextBoxFor(model => model.Website, new { @class = "form-control", placeholder = "Enter hotel website..", type = "text" })
+                @Html.ValidationMessageFor(model => model.Website)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = " " })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Comments here please...", type = "text" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group" style="background-color:aliceblue">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="container">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+            <div class="container">
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+            </div>
+            <br />
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
-</div>

@@ -5,87 +5,98 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="breadcrumb" style="background-color:lightblue;text-align:center">
+    Hotel Details
+</h2>
 
-<div>
+<div class="breadcrumb" style="background-color:lightblue">
     <h4>Hotel</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HotelImage)
-        </dt>
+    <hr />
+    <div class="breadcrumb">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.HotelImage)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HotelImage)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.HotelImage)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Mobile)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Mobile)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Mobile)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fax)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fax)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fax)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Fax)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Website)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+
+    <div class=" " style=" text-align:center">
+        <div class="btn btn-default" style="color:black">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

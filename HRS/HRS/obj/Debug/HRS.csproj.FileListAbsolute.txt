@@ -55,3 +55,4 @@ F:\Project\Sumon ASP.NET MVC5\HotelReservationSystem\HRS\HRS\obj\Debug\HRS.pdb
 F:\Project\Sumon ASP.NET MVC5\HotelReservationSystem\HRS\HRS\obj\Debug\HRS.Migrations.Migration001.resources
 F:\Project\Sumon ASP.NET MVC5\HotelReservationSystem\HRS\HRS\obj\Debug\HRS.csproj.GenerateResource.Cache
 F:\Project\Sumon ASP.NET MVC5\HotelReservationSystem\HRS\HRS\obj\Debug\HRS.Migrations.Migration002.resources
+F:\Project\Sumon ASP.NET MVC5\HotelReservationSystem\HRS\HRS\obj\Debug\HRS.csprojResolveAssemblyReference.cache

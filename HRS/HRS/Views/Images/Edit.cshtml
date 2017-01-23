@@ -5,50 +5,49 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 class="breadcrumb" style="background-color:lightblue; text-align:center">Edit Image </h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Images</h4>
+
+    <div class="form-horizontal" style="background-color:aliceblue">
+        <h4 class="breadcrumb" style="background-color:lightblue">Image</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
 
+        <div class="container">
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
-                @Html.ValidationMessageFor(model => model.Title)
-            </div>
+            @Html.LabelFor(model => model.Title, new { @class = " " })
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder = "Enter title....", type = "text" })
+            @Html.ValidationMessageFor(model => model.Title)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Url, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Url)
-                @Html.ValidationMessageFor(model => model.Url)
-            </div>
+            @Html.LabelFor(model => model.Url, new { @class = " " })
+            @Html.TextBoxFor(model => model.Url, new { @class = "form-control", placeholder = "Enter image Url here...", type = "text" })
+            @Html.ValidationMessageFor(model => model.Url)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
+            @Html.LabelFor(model => model.Description, new { @class = " " })
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Comments here...", type = "text" })
+            @Html.ValidationMessageFor(model => model.Description)
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group" style="background-color:aliceblue">
+                <div class="col-md-offset-2 col-md-10" style="background-color:aliceblue">
+                    <div class="container">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+                <div class="container" style="background-color:aliceblue">
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+                </div>
+                <br />
             </div>
-        </div>
+    </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -5,11 +5,12 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="breadcrumb" style="background-color:lightblue; text-align:center">Image Details</h2>
 
-<div>
+<div class="breadcrumb" style="background-color:lightblue">
     <h4>Images</h4>
-	<hr />
+    <hr />
+    <div class="breadcrumb">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -36,8 +37,14 @@
         </dd>
 
     </dl>
+  </div>
+    <div class=" " style=" text-align:center">
+        <div class="btn btn-default" style="color:black">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        </div>
+    </div>
+
+    <p>
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
