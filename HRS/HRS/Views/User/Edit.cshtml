@@ -20,32 +20,32 @@
 
     <div class="form-horizontal" style=" background-color:aliceblue">
         <div class="container">
-            <h4>User</h4>
+            <h4 class="breadcrumb" style="background-color:lightblue">User</h4>
             <hr />
             @Html.ValidationSummary(true)
             @Html.HiddenFor(model => model.ID)
 
             <div class="form-group">
                 @Html.LabelFor(model => model.UserName, new { @class = " " })
-                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = " ", type = "text" })
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Enter user name.....", type = "text" })
                 @Html.ValidationMessageFor(model => model.UserName)
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, new { @class = " " })
-                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = " ", type = "text" })
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter E-Mail address.... ", type = "text" })
                 @Html.ValidationMessageFor(model => model.Email)
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Password, new { @class = " " })
-                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = " ", type = "text" })
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Enter password.....", type = "text" })
                 @Html.ValidationMessageFor(model => model.Password)
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.ConfirmPassword, new { @class = " " })
-                @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", placeholder = " ", type = "text" })
+                @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", placeholder = "Enter confirm password....", type = "text" })
                 @Html.ValidationMessageFor(model => model.ConfirmPassword)
             </div>
 

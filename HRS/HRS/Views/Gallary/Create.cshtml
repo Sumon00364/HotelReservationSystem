@@ -5,41 +5,38 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Create</h2>
+<h2 class="breadcrumb" style="background-color:lightblue">Create Gallary</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Gallary</h4>
+        <h4 class="breadcrumb" style="background-color:lightblue">Gallary</h4>
         <hr />
         @Html.ValidationSummary(true)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title)
+        <div class="container" style="background-color:aliceblue">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, new { @class = " " })
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder = "Enter title .....", type = "text" })
                 @Html.ValidationMessageFor(model => model.Title)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = " " })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Comments here ....", type = "text" })
                 @Html.ValidationMessageFor(model => model.Description)
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div style="background-color:aliceblue">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
 </div>

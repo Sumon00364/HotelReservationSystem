@@ -7,48 +7,50 @@
 
 <h2 class="breadcrumb" style="background-color:lightblue;text-align:center"> User Profile Details</h2>
 
-<div class="breadcrumb" style="background-color:aliceblue">
+<div class="breadcrumb" style="background-color:lightblue">
     <h4>User</h4>
     <hr />
-    <div class="container;breadcrumb" style=" ">
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.UserName)
-            </dt>
+    <div class="breadcrumb">
+        <div class="container;" style=" ">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.UserName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Password)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Password)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ConfirmPassword)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ConfirmPassword)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.ConfirmPassword)
-            </dd>
-        </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.ConfirmPassword)
+                </dd>
+            </dl>
 
+        </div>
     </div>
 
     <div class=" " style=" text-align:center">
-        <div class="btn btn-default"style="color:black">
+        <div class="btn btn-default" style="color:black">
             @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
         </div>
     </div>

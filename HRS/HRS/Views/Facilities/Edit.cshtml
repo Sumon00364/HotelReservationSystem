@@ -5,42 +5,43 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 class="breadcrumb" style="background-color:lightblue; text-align:center">
+    Edit Hotel Facility
+</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Facilities</h4>
+        <h4 class="breadcrumb" style="background-color:lightblue">Facilities</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
+        <div class="container" style="background-color:aliceblue">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = " " })
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Enter facility name...", type = "text" })
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = " " })
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control", placeholder = "Comments here....", type = "text" })
                 @Html.ValidationMessageFor(model => model.Description)
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="" style="background-color:aliceblue">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+    <br />
 </div>
