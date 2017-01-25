@@ -47,7 +47,7 @@ namespace HRS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,HotelImage,Name,Address,Email,Phone,Mobile,Fax,Website,Description")] Hotel hotel)
+        public ActionResult Create([Bind(Include="ID,Name,Address,Email,Phone,Mobile,Fax,Website,HotelImage,Description")] Hotel hotel)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace HRS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,HotelImage,Name,Address,Email,Phone,Mobile,Fax,Website,Description")] Hotel hotel)
+        public ActionResult Edit([Bind(Include="ID,Name,Address,Email,Phone,Mobile,Fax,Website,HotelImage,Description")] Hotel hotel)
         {
             if (ModelState.IsValid)
             {

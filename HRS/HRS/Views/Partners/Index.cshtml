@@ -5,42 +5,13 @@
     Layout = "~/Views/Shared/_Layout - CP.cshtml";
 }
 
-<style>
-    Table, th, td {
-        border: 1px solid black;
-    }
-
-    /*tr:hover
-    {
-        background-color:lightblue;
-    }*/
-
-    tr:nth-child(2n+1) {
-        background-color: lightblue;
-    }
-
-    th {
-        background-color: forestgreen;
-        color: white;
-    }
-
-    h2 {
-        background-color: lightblue;
-        text-align: center;
-    }
-</style>
-
-<h2> Partner Index</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Create New", "Create")
 </p>
-
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PartnerImage)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -51,6 +22,9 @@
             @Html.DisplayNameFor(model => model.Website)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.PartnerImage)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th></th>
@@ -59,9 +33,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.PartnerImage)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
@@ -69,6 +40,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Website)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerImage)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)

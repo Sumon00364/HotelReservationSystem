@@ -9,17 +9,8 @@ namespace HRS.Models
 {
     public class Partners
     {
-        public Partners()
-        {
-            this.Hotel = new HashSet<Hotel>();
-        }
-
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-
-        [Required]
-        [Display(Name = "Logo")]
-        public int PartnerImage { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=4)]
@@ -38,9 +29,14 @@ namespace HRS.Models
         [Display(Name="Web-Site")]
         public string Website { get; set; }
 
+        [Required]
+        [StringLength(150)]
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "Logo")]
+        public string PartnerImage { get; set; }
+
         [StringLength(250, ErrorMessage="The {0} must be at least {2} characters.", MinimumLength=20)]
         public string Description { get; set; }
 
-        public virtual ICollection<Hotel> Hotel { get; set; }
     }
 }

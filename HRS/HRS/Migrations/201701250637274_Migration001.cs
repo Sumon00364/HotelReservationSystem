@@ -117,8 +117,8 @@ namespace HRS.Migrations
                         Mobile = c.String(nullable: false, maxLength: 50),
                         Fax = c.String(nullable: false, maxLength: 50),
                         Website = c.String(nullable: false, maxLength: 150),
+                        HotelImage = c.String(nullable: false, maxLength: 150),
                         Description = c.String(maxLength: 250),
-                        HotelImage = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -127,10 +127,10 @@ namespace HRS.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        PartnerImage = c.Int(nullable: false),
                         Name = c.String(nullable: false, maxLength: 100),
                         Email = c.String(nullable: false, maxLength: 129),
                         Website = c.String(nullable: false, maxLength: 150),
+                        PartnerImage = c.String(nullable: false, maxLength: 150),
                         Description = c.String(maxLength: 250),
                     })
                 .PrimaryKey(t => t.ID);
@@ -233,19 +233,6 @@ namespace HRS.Migrations
                 .Index(t => t.Images_ID)
                 .Index(t => t.Gallary_ID);
             
-            CreateTable(
-                "dbo.PartnersHotels",
-                c => new
-                    {
-                        Partners_ID = c.Int(nullable: false),
-                        Hotel_ID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Partners_ID, t.Hotel_ID })
-                .ForeignKey("dbo.Partners", t => t.Partners_ID, cascadeDelete: true)
-                .ForeignKey("dbo.Hotels", t => t.Hotel_ID, cascadeDelete: true)
-                .Index(t => t.Partners_ID)
-                .Index(t => t.Hotel_ID);
-            
         }
         
         public override void Down()
@@ -254,8 +241,6 @@ namespace HRS.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.PartnersHotels", "Hotel_ID", "dbo.Hotels");
-            DropForeignKey("dbo.PartnersHotels", "Partners_ID", "dbo.Partners");
             DropForeignKey("dbo.RoomTypes", "GallaryID", "dbo.Gallaries");
             DropForeignKey("dbo.Services", "ImageID", "dbo.Images");
             DropForeignKey("dbo.ImagesGallaries", "Gallary_ID", "dbo.Gallaries");
@@ -269,8 +254,6 @@ namespace HRS.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.PartnersHotels", new[] { "Hotel_ID" });
-            DropIndex("dbo.PartnersHotels", new[] { "Partners_ID" });
             DropIndex("dbo.RoomTypes", new[] { "GallaryID" });
             DropIndex("dbo.Services", new[] { "ImageID" });
             DropIndex("dbo.ImagesGallaries", new[] { "Gallary_ID" });
@@ -280,7 +263,6 @@ namespace HRS.Migrations
             DropIndex("dbo.RoleUsers", new[] { "User_ID" });
             DropIndex("dbo.RoleUsers", new[] { "Role_ID" });
             DropIndex("dbo.BookingInfoes", new[] { "UserID" });
-            DropTable("dbo.PartnersHotels");
             DropTable("dbo.ImagesGallaries");
             DropTable("dbo.RoomTypeFacilities");
             DropTable("dbo.RoleUsers");
